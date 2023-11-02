@@ -3,6 +3,7 @@ import React, { HTMLAttributes } from 'react';
 export enum FontWeight {
   semiBold = 'font-semibold',
   medium = 'font-medium',
+  regular = 'font-normal',
 }
 export enum CustomColors {
   gray50 = 'text-custom-gray-50',
@@ -19,7 +20,6 @@ export enum CustomColors {
   yellow = 'text-custom-yellow',
   orange = 'text-custom-orange',
 }
-
 
 interface TextProps extends HTMLAttributes<HTMLHeadingElement> {
   label: string,
@@ -42,7 +42,7 @@ const H4: React.FC<TextProps> = ({ label, fontWeight = FontWeight.medium, color,
 
 const Paragraph: React.FC<TextProps> = ({ label, color, className }) => {
   return (
-    <p className={`text-md mt-2 ${color} ${className}`}>{label}</p>
+    <p className={`text-lg mt-2 ${color} ${className}`}>{label}</p>
   )
 }
 

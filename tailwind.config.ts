@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
   content: [
@@ -8,7 +9,7 @@ const config: Config = {
   ],
   theme: {
     fontSize: {
-      sm: '0.8rem',
+      sm: '0.75rem', //12px
       base: '0.875rem', //14px
       md: '1.125rem', //18px
       xl: '1.5rem', //24px
@@ -30,13 +31,23 @@ const config: Config = {
       'custom-yellow': '#FDDF12',
       'custom-orange': '#F7C59F',
     },
-    extend: {
-      backgroundImage: {
-        'arrival-bg': "url('/images/arrival-bg.png')",
-        'arrival-lady': "url('/images/arrival-bg.png')",
-      },
-    },
+    extend: {},
+    textShadow: {
+      sm: '1px 1px 2px var(--tw-shadow-color)',
+      DEFAULT: '2px 2px 4px var(--tw-shadow-color)',
+      lg: '4px 4px 8px var(--tw-shadow-color)',
+      xl: '4px 4px 16px var(--tw-shadow-color)',
+    }
   },
-  plugins: [],
+  plugins: [plugin(function ({ matchUtilities, theme }: { matchUtilities: any, theme: any }) {
+    matchUtilities(
+      {
+        'text-shadow': (value: any) => ({
+          textShadow: value
+        }),
+      },
+      { values: theme('textShadow') }
+    )
+  })]
 }
 export default config

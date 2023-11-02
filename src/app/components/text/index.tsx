@@ -46,5 +46,11 @@ const Paragraph: React.FC<TextProps> = ({ label, color, className }) => {
   )
 }
 
-export { H1, H4, Paragraph };
+const SubTitle: React.FC<TextProps> = ({ label, color, className }) => {
+  return (
+    <p className={`text-sm mt-2 ${color} ${className}`}>{label}</p>
+  )
+}
+
+export { H1, H4, Paragraph, SubTitle };
 

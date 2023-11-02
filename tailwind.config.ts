@@ -28,12 +28,12 @@ const config: Config = {
       'custom-gray-900': '#111827',
       'custom-red': '#EB5757',
       'custom-yellow': '#FDDF12',
+      'custom-orange': '#F7C59F',
     },
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'arrival-bg': "url('/images/arrival-bg.png')",
+        'arrival-lady': "url('/images/arrival-bg.png')",
       },
     },
   },

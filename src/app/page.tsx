@@ -122,12 +122,12 @@ const App = () => {
         </Section>
         <Section className='md:mt-40 md:mb-40' title={'Brands for you'}>
           <div className='flex space-x-3 md:mt-7 justify-center m-auto w-1/2 gap-5'>
-            <Image src={Brand1} alt={'brand img'} />
-            <Image src={Brand2} alt={'brand img'} />
-            <Image src={Brand3} alt={'brand img'} />
-            <Image src={Brand4} alt={'brand img'} />
-            <Image src={Brand5} alt={'brand img'} />
-            <Image src={Brand6} alt={'brand img'} />
+            <Image placeholder='blur' src={Brand1} alt={'brand img'} />
+            <Image placeholder='blur' src={Brand2} alt={'brand img'} />
+            <Image placeholder='blur' src={Brand3} alt={'brand img'} />
+            <Image placeholder='blur' src={Brand4} alt={'brand img'} />
+            <Image placeholder='blur' src={Brand5} alt={'brand img'} />
+            <Image placeholder='blur' src={Brand6} alt={'brand img'} />
           </div>
         </Section>
         <Section className={`mb-52 h-[515px] md:mt-24 relative`}>
@@ -143,7 +143,7 @@ const App = () => {
             <Button
               label={'shop now'}
               className='border mb-[106px] border-custom-light-gray text-custom-red bg-custom-light-gray'
-              suffix={<Image src={ShopArrowIcon} alt={'arrow'} />}
+              suffix={<Image placeholder='blur' src={ShopArrowIcon} alt={'arrow'} />}
             />
             <Countdown endDate={'01/01/2023'} />
           </div>

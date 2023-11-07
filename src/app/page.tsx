@@ -2,11 +2,11 @@ import Image from 'next/image'
 import { ArrivalLady, ArrowIcon, BasketIcon, Brand1, Brand2, Brand3, Brand4, Brand5, Brand6, Hightlight1, Hightlight2, Hightlight3, Hightlight4, MaskedArrivalBg, Product1, Product2, Product3, Product4, ShopArrowIcon, SummerCollectionBg } from '../../public/assets'
 import Button from './components/button'
 import { HighlightCard, ProductCard } from './components/cards'
+import Countdown from './components/countdown'
 import Input from './components/input'
 import Section from './components/section'
 import { FontWeight, H1, H4, Paragraph } from './components/text'
 import Ul from './components/ul'
-import Countdown from './components/countdown'
 
 const App = () => {
   return (
@@ -130,7 +130,7 @@ const App = () => {
             <Image src={Brand6} alt={'brand img'} />
           </div>
         </Section>
-        <Section className={`mt-10 h-[515px] md:mt-24 relative`}>
+        <Section className={`mb-52 h-[515px] md:mt-24 relative`}>
           <Image
             src={SummerCollectionBg}
             className={'h-[515px] -z-10 absolute md:px-20 px-10'}
@@ -147,6 +147,9 @@ const App = () => {
             />
             <Countdown endDate={'01/01/2023'} />
           </div>
+        </Section>
+        <Section className='bg-custom-gray-50'>
+          <></>
         </Section>
       </main>
     </div>

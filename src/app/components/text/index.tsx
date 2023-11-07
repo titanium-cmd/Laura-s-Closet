@@ -1,6 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 
 export enum FontWeight {
+  bold = 'font-bold',
   semiBold = 'font-semibold',
   medium = 'font-medium',
   regular = 'font-normal',
@@ -30,9 +31,9 @@ const Paragraph: React.FC<TextProps> = ({ label, className }) => {
   )
 }
 
-const SubTitle: React.FC<TextProps> = ({ label, color, className }) => {
+const SubTitle: React.FC<TextProps> = ({ label, className }) => {
   return (
-    <p className={`text-sm mt-2 ${color && 'text-' + color} ${className}`}>{label}</p>
+    <p className={`text-sm mt-2 ${className}`}>{label}</p>
   )
 }
 

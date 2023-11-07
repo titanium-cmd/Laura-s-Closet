@@ -6,6 +6,7 @@ import Input from './components/input'
 import Section from './components/section'
 import { FontWeight, H1, H4, Paragraph } from './components/text'
 import Ul from './components/ul'
+import Countdown from './components/countdown'
 
 const App = () => {
   return (
@@ -119,7 +120,7 @@ const App = () => {
             />
           </div>
         </Section>
-        <Section title={'Brands for you'}>
+        <Section className='md:mt-40 md:mb-40' title={'Brands for you'}>
           <div className='flex space-x-3 md:mt-7 justify-center m-auto w-1/2 gap-5'>
             <Image src={Brand1} alt={'brand img'} />
             <Image src={Brand2} alt={'brand img'} />
@@ -134,14 +135,17 @@ const App = () => {
             src={SummerCollectionBg}
             className={'h-[515px] -z-10 absolute md:px-20 px-10'}
             fill alt={'summer collection bg img'} />
-          <div className=' border w-fit my-auto'>
-            <H4 label={'summer '} fontWeight={FontWeight.semiBold} className='uppercase text-[40px] text-custom-blue-black inline-block' /> {"\t        "}
-            <H4 label={'collections'} className='uppercase text-custom-red text-[40px]' />
+          <div className='px-12 w-fit my-auto h-full flex flex-col justify-center items-start'>
+            <div className='space-x-1 mb-8 mt-40'>
+              <H4 label={'summer '} fontWeight={FontWeight.semiBold} className='uppercase text-[41px] text-custom-blue-black inline-block' /> {"\t        "}
+              <H4 label={'collections'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-red text-[41px] inline-block' />
+            </div>
             <Button
               label={'shop now'}
-              className='border border-custom-light-gray text-custom-red bg-custom-light-gray'
+              className='border mb-[106px] border-custom-light-gray text-custom-red bg-custom-light-gray'
               suffix={<Image src={ShopArrowIcon} alt={'arrow'} />}
             />
+            <Countdown endDate={'01/01/2023'} />
           </div>
         </Section>
       </main>

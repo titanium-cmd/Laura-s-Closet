@@ -1,9 +1,10 @@
 import Image from 'next/image'
-import { ArrivalLady, ArrowIcon, BasketIcon, Hightlight1, Hightlight2, Hightlight3, Hightlight4, MaskedArrivalBg, Product1, Product2, Product3, Product4 } from '../../public/assets'
+import { ArrivalLady, ArrowIcon, BasketIcon, Brand1, Brand2, Brand3, Brand4, Brand5, Brand6, Hightlight1, Hightlight2, Hightlight3, Hightlight4, MaskedArrivalBg, Product1, Product2, Product3, Product4, ShopArrowIcon, SummerCollectionBg } from '../../public/assets'
+import Button from './components/button'
 import { HighlightCard, ProductCard } from './components/cards'
 import Input from './components/input'
-import SectionTitle from './components/section-title'
-import { CustomColors, FontWeight, H1, H4, Paragraph } from './components/text'
+import Section from './components/section'
+import { FontWeight, H1, H4, Paragraph } from './components/text'
 import Ul from './components/ul'
 
 const App = () => {
@@ -13,7 +14,7 @@ const App = () => {
         <div className='py-4 bg-custom-light-gray px-12 flex items-center justify-between'>
           <H4
             label="Laura's Closet"
-            color={CustomColors.gray700} />
+            className='text-custom-gray-700' />
           <Input placeholder='Search for an Item...' />
           <nav>
             <Ul links={[
@@ -33,7 +34,7 @@ const App = () => {
           <Ul
             fontSize='text-md'
             fontWeight={FontWeight.semiBold}
-            color={CustomColors.gray700}
+            className='text-custom-gray-700'
             links={[
               {
                 value: <div className='flex items-center space-x-2'>
@@ -58,28 +59,28 @@ const App = () => {
         </nav>
       </header>
       <main>
-        <section className='grid md:grid-cols-3'>
+        <Section hasSpacing={false} className='grid md:grid-cols-3'>
           <section className="relative md:col-span-2 bg-[#111827] bg-opacity-95">
             <div className="relative z-10 bg-custom-gray-800 lg:mx-24 lg:my-[130px] w-fit p-10">
-              <H1 label="Get up to 30% off" color={CustomColors.gray50} />
-              <H1 label="New Arrivals" color={CustomColors.orange} />
-              <Paragraph label={'Introducing our latest collection of products'} color={CustomColors.gray100} className='mt-3' />
+              <H1 label="Get up to 30% off" className='text-custom-gray-50' />
+              <H1 label="New Arrivals" className='text-custom-orange' />
+              <Paragraph label={'Introducing our latest collection of products'} className='mt-3 text-custom-gray-100' />
               <br />
               <br />
-              <button className='border flex space-x-3 items-center font-semibold tracking-widest border-custom-gray-100 px-3 py-2.5 text-md uppercase text-custom-gray-100'>
-                <span>Place your Order</span>
-                <Image src={ArrowIcon} alt={'arrow'} />
-              </button>
+              <Button
+                label={'Place your Order'}
+                className=' border-custom-gray-100 text-custom-gray-100'
+                suffix={<Image src={ArrowIcon} alt={'arrow'} />}
+              />
             </div>
             <Image src={MaskedArrivalBg} fill={true} alt='arrival' />
           </section>
           <section className='bg-custom-orange relative flex items-center justify-center'>
             <div className='bg-[white] h-[347px] w-[347px] rounded-full'></div>
-            <Image src={ArrivalLady} width={312} height={607} className='absolute top-14' alt={'lady'} />
+            <Image src={ArrivalLady} placeholder='blur' quality={100} priority width={312} height={607} className='absolute top-14' alt={'lady'} />
           </section>
-        </section>
-        <section className='md:px-28'>
-          <SectionTitle title={'This Weeks Highlights'} />
+        </Section>
+        <Section title={'This Weeks Highlights'}>
           <div className='h-[506px] w-full grid md:grid-cols-8 gap-5'>
             <HighlightCard className='col-span-3' imgSrc={Hightlight1} title={'Exclusive Shoes'} />
             <HighlightCard className='col-span-5' imgSrc={Hightlight2} title={'Exquisite Styles & Collections'} />
@@ -89,10 +90,9 @@ const App = () => {
             <HighlightCard className='col-span-5' imgSrc={Hightlight3} title={'New Arrivals'} />
             <HighlightCard className='col-span-3' imgSrc={Hightlight4} title={'Exclusive Items'} />
           </div>
-        </section>
-        <section>
-          <SectionTitle title={'Popular this week'} />
-          <div className='md:px-28 md:my-20 gap-5 grid grid-cols-4'>
+        </Section>
+        <Section title={'Popular this week'}>
+          <div className='space-y-5 md:space-y-0 md:my-20 gap-8 grid md:grid-cols-4'>
             <ProductCard
               imgSrc={Product1}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
@@ -118,7 +118,32 @@ const App = () => {
               discountedPrice={120.23}
             />
           </div>
-        </section>
+        </Section>
+        <Section title={'Brands for you'}>
+          <div className='flex space-x-3 md:mt-7 justify-center m-auto w-1/2 gap-5'>
+            <Image src={Brand1} alt={'brand img'} />
+            <Image src={Brand2} alt={'brand img'} />
+            <Image src={Brand3} alt={'brand img'} />
+            <Image src={Brand4} alt={'brand img'} />
+            <Image src={Brand5} alt={'brand img'} />
+            <Image src={Brand6} alt={'brand img'} />
+          </div>
+        </Section>
+        <Section className={`mt-10 h-[515px] md:mt-24 relative`}>
+          <Image
+            src={SummerCollectionBg}
+            className={'h-[515px] -z-10 absolute md:px-20 px-10'}
+            fill alt={'summer collection bg img'} />
+          <div className=' border w-fit my-auto'>
+            <H4 label={'summer '} fontWeight={FontWeight.semiBold} className='uppercase text-[40px] text-custom-blue-black inline-block' /> {"\t        "}
+            <H4 label={'collections'} className='uppercase text-custom-red text-[40px]' />
+            <Button
+              label={'shop now'}
+              className='border border-custom-light-gray text-custom-red bg-custom-light-gray'
+              suffix={<Image src={ShopArrowIcon} alt={'arrow'} />}
+            />
+          </div>
+        </Section>
       </main>
     </div>
   )

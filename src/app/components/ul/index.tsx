@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { HTMLAttributes } from 'react'
 import Li, { LiProps } from '../li'
-import { CustomColors, FontWeight } from '../text'
+import { FontWeight } from '../text'
 
-interface UlProps {
+interface UlProps extends HTMLAttributes<HTMLHeadingElement> {
   links: LiProps[],
   fontWeight?: FontWeight,
   fontSize?: 'text-sm' | 'text-md' | 'text-lg' | 'text-base',
-  color?: CustomColors
+  className?: string
 }
 
-const Ul: React.FC<UlProps> = ({ links, color = CustomColors.gray500, fontWeight, fontSize }) => {
+const Ul: React.FC<UlProps> = ({ links, className, fontWeight, fontSize }) => {
   return (
-    <ul className={`flex items-center text-center justify-center space-x-10 ${fontWeight} ${fontSize} ${color}`}>
-      {links.length > 0 && links.map(link => <Li value={link.value} href={link.href} />)}
+    <ul className={`flex items-center text-center justify-center space-x-10 ${fontWeight} ${fontSize} ${className}`}>
+      {links.length > 0 && links.map(link => <Li key={link.value} value={link.value} href={link.href} />)}
     </ul>
   )
 }

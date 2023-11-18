@@ -196,25 +196,37 @@ const App = () => {
           <div className='grid grid-cols-5'>
             <div>
               <Paragraph label={'company info'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
-              <Paragraph label={'About Laura’s Closet'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Social Responsibility'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Affiliate'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Fashion Blogger'} className='mt-3 text-custom-gray-500' />
+              <Ul
+                ulClassName='flex-col text-left space-x-0 space-y-3 mt-3 text-md'
+                links={[
+                  { value: 'About Laura’s Closet' },
+                  { value: 'Social Responsibility' },
+                  { value: 'Affiliate' },
+                  { value: 'Fashion Blogger' },
+                ]} />
             </div>
             <div>
               <Paragraph label={'HElp & Support'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
-              <Paragraph label={'Shipping Info'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Returns'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'How to Order'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'How to Track'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Size Chart'} className='mt-3 text-custom-gray-500' />
+              <Ul
+                ulClassName='flex-col text-left space-x-0 space-y-3 mt-3 text-md'
+                links={[
+                  { value: 'Shipping Info' },
+                  { value: 'Returns' },
+                  { value: 'How to Order' },
+                  { value: 'How to Track' },
+                  { value: 'Size Chart' },
+                ]} />
             </div>
             <div>
               <Paragraph label={'customer care'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
-              <Paragraph label={'Contact Us'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Payment'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Bonus Point'} className='mt-3 text-custom-gray-500' />
-              <Paragraph label={'Notices'} className='mt-3 text-custom-gray-500' />
+              <Ul
+                ulClassName='flex-col text-left space-x-0 space-y-3 mt-3 text-md'
+                links={[
+                  { value: 'Contact Us' },
+                  { value: 'Payment' },
+                  { value: 'Bonus Point' },
+                  { value: 'Notices' }
+                ]} />
             </div>
             <div className='col-span-2 grid grid-cols-2'>
               <div>

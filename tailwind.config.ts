@@ -13,7 +13,8 @@ const config: Config = {
       md: '0.875rem', //14px
       lg: '1.125rem', //18px
       xl: '1.5rem', //24px
-      '2xl': '3.5rem' //56px
+      '2xl': '2.9rem', //
+      '3xl': '3.5rem' //56px
     },
     colors: {
       'custom-light-gray': '#FAFAFA',

@@ -10,7 +10,7 @@ interface SectionProps extends HTMLAttributes<HTMLHeadingElement> {
 
 const Section: React.FC<SectionProps> = ({ children, className, hasSpacing = true, title }) => {
   return (
-    <section className={`${hasSpacing ? 'md:px-20 px-10' : ''} ${className}`}>
+    <section className={`${hasSpacing ? 'md:px-20 px-10' : ''} ${className} mt-24 md:mt-0`}>
       {title && <div className='md:mt-32 mb-7 flex flex-col justify-center items-center'>
         <H4 label={title} className='uppercase text-custom-gray-700' />
         <span className='h-[4px] w-[88px] mt-2 block bg-custom-gray-700'></span>

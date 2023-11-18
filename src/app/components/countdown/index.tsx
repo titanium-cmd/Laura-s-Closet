@@ -22,7 +22,7 @@ const CountDownTime: React.FC<CountDownTimeProps> = ({ title, subTitle }) => {
 
 const Countdown: React.FC<CountdownProps> = () => {
   return (
-    <div className='flex space-x-6 items-center text-custom-gray-50'>
+    <div className='flex md:space-x-6 space-x-4 items-center text-custom-gray-50'>
       <CountDownTime title={'07'} subTitle={'Days'} />
       <span className='mb-6 text-[#9FC9E7] text-xl'>:</span>
       <CountDownTime title={'08'} subTitle={'Hours'} />

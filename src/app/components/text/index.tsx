@@ -15,7 +15,7 @@ interface TextProps extends HTMLAttributes<HTMLHeadingElement> {
 
 const H1: React.FC<TextProps> = ({ label, fontWeight = FontWeight.semiBold, className }) => {
   return (
-    <h1 className={`text-2xl ${fontWeight} ${className}`}>{label}</h1>
+    <h1 className={`text-3xl ${fontWeight} ${className}`}>{label}</h1>
   )
 }
 

@@ -55,7 +55,7 @@ const App = () => {
   return (
     <div>
       <header>
-        <div className='py-4 bg-custom-light-gray px-12 flex items-center justify-between'>
+        <div className='py-4 bg-custom-light-gray md:px-12 px-5 flex items-center justify-between'>
           <H4
             label="Laura's Closet"
             className='text-custom-gray-700' />
@@ -79,7 +79,8 @@ const App = () => {
           <Ul
             fontSize='text-md'
             fontWeight={FontWeight.semiBold}
-            ulClassName='text-custom-gray-700 items-center text-center justify-center'
+            ulClassName='text-custom-gray-700 inline-block items-center text-center justify-center'
+            liClassName='inline-block'
             links={[
               {
                 value: <div className='flex items-center space-x-2'>
@@ -122,18 +123,18 @@ const App = () => {
           </section>
           <section className='bg-custom-orange relative flex items-center justify-center'>
             <div className='bg-[white] h-[347px] w-[347px] rounded-full'></div>
-            <Image src={ArrivalLady} placeholder='blur' quality={100} priority width={312} height={607} className='absolute top-14' alt={'lady'} />
+            <Image src={ArrivalLady} placeholder='blur' quality={100} priority className='absolute md:top-14 top-9 w-[152px] h-[307px] md:w-[312px] md:h-[607px]' alt={'lady'} />
           </section>
         </Section>
         <Section title={'This Weeks Highlights'}>
-          <div className='h-[506px] w-full grid md:grid-cols-8 gap-5'>
-            <HighlightCard className='col-span-3' imgSrc={Hightlight1} title={'Exclusive Shoes'} />
-            <HighlightCard className='col-span-5' imgSrc={Hightlight2} title={'Exquisite Styles & Collections'} />
+          <div className='md:h-[506px] h-[700px] w-full grid md:grid-cols-8 gap-5'>
+            <HighlightCard className='md:col-span-3' imgSrc={Hightlight1} title={'Exclusive Shoes'} />
+            <HighlightCard className='md:col-span-5' imgSrc={Hightlight2} title={'Exquisite Styles & Collections'} />
           </div>
           <br />
-          <div className='h-[506px] w-full grid md:grid-cols-8 gap-5'>
-            <HighlightCard className='col-span-5' imgSrc={Hightlight3} title={'New Arrivals'} />
-            <HighlightCard className='col-span-3' imgSrc={Hightlight4} title={'Exclusive Items'} />
+          <div className='md:h-[506px] h-[700px] w-full grid md:grid-cols-8 gap-5'>
+            <HighlightCard className='md:col-span-5' imgSrc={Hightlight3} title={'New Arrivals'} />
+            <HighlightCard className='md:col-span-3' imgSrc={Hightlight4} title={'Exclusive Items'} />
           </div>
         </Section>
         <Section title={'Popular this week'}>
@@ -165,22 +166,22 @@ const App = () => {
           </div>
         </Section>
         <Section className='md:mt-40 md:mb-40' title={'Brands for you'}>
-          <div className='flex space-x-3 md:mt-7 justify-center m-auto w-1/2 gap-5'>
-            <Image placeholder='blur' src={Brand1} alt={'brand img'} />
-            <Image placeholder='blur' src={Brand2} alt={'brand img'} />
-            <Image placeholder='blur' src={Brand3} alt={'brand img'} />
-            <Image placeholder='blur' src={Brand4} alt={'brand img'} />
-            <Image placeholder='blur' src={Brand5} alt={'brand img'} />
-            <Image placeholder='blur' src={Brand6} alt={'brand img'} />
+          <div className='md:flex inline-block w-full text-center space-x-3 md:mt-7 justify-center m-auto md:w-1/2 gap-5'>
+            <Image placeholder='blur' className='inline-block' src={Brand1} alt={'brand img'} />
+            <Image placeholder='blur' className='inline-block' src={Brand2} alt={'brand img'} />
+            <Image placeholder='blur' className='inline-block' src={Brand3} alt={'brand img'} />
+            <Image placeholder='blur' className='inline-block' src={Brand4} alt={'brand img'} />
+            <Image placeholder='blur' className='inline-block' src={Brand5} alt={'brand img'} />
+            <Image placeholder='blur' className='inline-block' src={Brand6} alt={'brand img'} />
           </div>
         </Section>
-        <Section className={`mb-48 h-[515px] md:mt-24 relative`}>
+        <Section className={`md:mb-48 md:h-[515px] md:mt-24 relative`}>
           <Image
             src={SummerCollectionBg}
-            className={'h-[515px] -z-10 absolute md:px-20 px-10'}
+            className={'md:h-[515px] h-[315px] -z-10 absolute md:px-20 px-10'}
             fill alt={'summer collection bg img'} />
-          <div className='px-12 w-fit my-auto h-full flex flex-col justify-center items-start'>
-            <div className='space-x-1 mb-8 mt-40'>
+          <div className='md:px-12 px-6 w-fit my-auto h-full flex flex-col justify-center items-start'>
+            <div className='space-x-1 mb-8 md:mt-40 mt-24'>
               <H4 label={'summer '} fontWeight={FontWeight.semiBold} className='uppercase text-[41px] text-custom-blue-black inline-block' /> {"\t        "}
               <H4 label={'collections'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-red text-[41px] inline-block' />
             </div>
@@ -193,7 +194,7 @@ const App = () => {
           </div>
         </Section>
         <Section className='bg-custom-gray-50 py-14'>
-          <div className='grid grid-cols-5'>
+          <div className='grid md:grid-cols-5'>
             <div>
               <Paragraph label={'company info'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
               <Ul
@@ -208,7 +209,8 @@ const App = () => {
             <div>
               <Paragraph label={'HElp & Support'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
               <Ul
-                ulClassName='flex-col text-left space-x-0 space-y-3 mt-3 text-md'
+                ulClassName='flex-col border text-left space-x-0 space-y-3 mt-3 text-md'
+                liClassName='border'
                 links={[
                   { value: 'Shipping Info' },
                   { value: 'Returns' },
@@ -283,7 +285,7 @@ const App = () => {
             </div>
             <div className='col-span-2'>
               <Paragraph label={'we accept'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800 mb-6' />
-              <div className='flex items-center space-x-2'>
+              <div className='flex grow w-full items-center space-x-2'>
                 <Image src={masterCardLogo} alt="Mastercard logo" />
                 <Image src={paypalLogo} alt="Paypal logo" />
                 <Image src={ebayLogo} alt="ebay logo" />
@@ -293,7 +295,7 @@ const App = () => {
                 <Image src={westernUnionLogo} alt="discover logo" />
                 <Image src={PayoneerLogo} alt="Payoneer logo" />
               </div>
-              <div className='flex mt-2 items-center space-x-2'>
+              <div className='flex grow mt-2 items-center space-x-2'>
                 <Image src={applePay} alt="applepay logo" />
                 <Image src={americanExpress} alt="american epxress logo" />
                 <Image src={amazonLogo} alt="amazon logo" />

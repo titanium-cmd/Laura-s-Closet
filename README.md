@@ -1,7 +1,7 @@
 
 ## UI Design
 The UI design was picked from the figma community.
-<img src="https://github.com/SourcesTechnologies/77QuestionApp/assets/29788282/81c88a5f-0b09-4b28-beb7-924e64769278" alt="Screenshot 1" width="400" height="800">
+<img src="https://www.figma.com/file/LzOzjcOwV1gk6MA7rZKJwD/Laura's-Closet-(-E-commerce-Fashion-Website-Landing-Page-)-(Community)?type=design&node-id=1-2&mode=design&t=XvDEFdkvOrGiTchI-0" alt="UI Design" width="400" height="800">
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

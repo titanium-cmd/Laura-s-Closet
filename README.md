@@ -3,9 +3,8 @@
 The UI design was picked from the figma community. You can check it out <a href="https://www.figma.com/file/LzOzjcOwV1gk6MA7rZKJwD/Laura's-Closet-(-E-commerce-Fashion-Website-Landing-Page-)-(Community)?type=design&node-id=1-2&mode=design&t=XvDEFdkvOrGiTchI-0" target="_blank">HERE</a>
 
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 

@@ -62,7 +62,6 @@ const App = () => {
           <Input placeholder='Search for an Item...' prefix={<Image src={SearchIcon} alt="Search icon" />} />
           <nav>
             <Ul
-              className=''
               links={[
                 { value: "Store" },
                 { value: 'Account' },
@@ -80,7 +79,7 @@ const App = () => {
           <Ul
             fontSize='text-md'
             fontWeight={FontWeight.semiBold}
-            className='text-custom-gray-700 items-center text-center justify-center'
+            ulClassName='text-custom-gray-700 items-center text-center justify-center'
             links={[
               {
                 value: <div className='flex items-center space-x-2'>
@@ -252,14 +251,18 @@ const App = () => {
             <div className='col-span-3'>
               <Paragraph label={'©2010-2022 Laura’s Closet All Rights Reserved'} className='text-custom-gray-500' />
               <Ul
-                className='text-md space-x-3 mt-5 underline underline-offset-4'
+                ulClassName='text-md space-x-3 mt-5'
+                liClassName='underline underline-offset-4'
+                middleMan={<span>|</span>}
                 links={[
                   { value: 'Privacy Center' },
                   { value: 'Privacy & Cookie Policy' },
                   { value: 'Manage Cookies' },
                 ]} />
               <Ul
-                className='text-md space-x-3 mt-2 underline underline-offset-4'
+                ulClassName='text-md space-x-3 mt-2'
+                liClassName='underline underline-offset-4'
+                middleMan={<span>|</span>}
                 links={[
                   { value: 'Terms & Conditions' },
                   { value: 'Copyright Notice' },

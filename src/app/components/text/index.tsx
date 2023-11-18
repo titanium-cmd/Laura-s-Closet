@@ -25,17 +25,23 @@ const H4: React.FC<TextProps> = ({ label, fontWeight = FontWeight.medium, classN
   )
 }
 
-const Paragraph: React.FC<TextProps> = ({ label, className }) => {
+const H6: React.FC<TextProps> = ({ label, fontWeight = FontWeight.medium, className }) => {
   return (
-    <p className={`text-lg mt-2 ${className}`}>{label}</p>
+    <h4 className={`text-lg ${fontWeight} mt-2 ${className}`}>{label}</h4>
   )
 }
 
-const SubTitle: React.FC<TextProps> = ({ label, className }) => {
+const Paragraph: React.FC<TextProps> = ({ label, className, fontWeight = FontWeight.regular, }) => {
   return (
-    <p className={`text-sm mt-2 ${className}`}>{label}</p>
+    <p className={`text-md ${fontWeight} mt-2 ${className}`}>{label}</p>
   )
 }
 
-export { H1, H4, Paragraph, SubTitle };
+const SubTitle: React.FC<TextProps> = ({ label, className, fontWeight = FontWeight.medium, }) => {
+  return (
+    <p className={`text-sm ${fontWeight} mt-2 ${className}`}>{label}</p>
+  )
+}
+
+export { H1, H4, H6, Paragraph, SubTitle };
 

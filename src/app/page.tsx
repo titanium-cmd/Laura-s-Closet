@@ -1,11 +1,54 @@
 import Image from 'next/image'
-import { ArrivalLady, ArrowIcon, BasketIcon, Brand1, Brand2, Brand3, Brand4, Brand5, Brand6, Hightlight1, Hightlight2, Hightlight3, Hightlight4, MaskedArrivalBg, Product1, Product2, Product3, Product4, ShopArrowIcon, SummerCollectionBg } from '../../public/assets'
+import {
+  ArrivalLady,
+  ArrowIcon,
+  BasketIcon,
+  Brand1,
+  Brand2,
+  Brand3,
+  Brand4,
+  Brand5,
+  Brand6,
+  Hightlight1,
+  Hightlight2,
+  Hightlight3,
+  Hightlight4,
+  MaskedArrivalBg,
+  PayoneerLogo,
+  Product1,
+  Product2,
+  Product3,
+  Product4,
+  SearchIcon,
+  ShopArrowIcon,
+  SummerCollectionBg,
+  aliPay,
+  amazonLogo,
+  americanExpress,
+  androidIcon,
+  appleIcon,
+  applePay,
+  bitPay,
+  bitcoin,
+  discoverLogo,
+  ebayLogo,
+  facebookIcon,
+  googlePayLogo,
+  instagramIcon,
+  masterCardLogo,
+  monoBanklogo,
+  paypalLogo,
+  snapchatIcon,
+  tiktokIcon,
+  twitterIcon,
+  westernUnionLogo
+} from '../../public/assets'
 import Button from './components/button'
 import { HighlightCard, ProductCard } from './components/cards'
 import Countdown from './components/countdown'
 import Input from './components/input'
 import Section from './components/section'
-import { FontWeight, H1, H4, Paragraph } from './components/text'
+import { FontWeight, H1, H4, H6, Paragraph, SubTitle } from './components/text'
 import Ul from './components/ul'
 
 const App = () => {
@@ -16,26 +59,28 @@ const App = () => {
           <H4
             label="Laura's Closet"
             className='text-custom-gray-700' />
-          <Input placeholder='Search for an Item...' />
+          <Input placeholder='Search for an Item...' prefix={<Image src={SearchIcon} alt="Search icon" />} />
           <nav>
-            <Ul links={[
-              { value: "Store" },
-              { value: 'Account' },
-              { value: 'Wish List' },
-              {
-                value: <div className='flex text-custom-gray-800 space-x-3 font-semibold'>
-                  <span>Basket</span>
-                  <Image src={BasketIcon} alt="basket" />
-                </div>
-              }
-            ]} />
+            <Ul
+              className=''
+              links={[
+                { value: "Store" },
+                { value: 'Account' },
+                { value: 'Wish List' },
+                {
+                  value: <div className='flex text-custom-gray-800 space-x-3 font-semibold'>
+                    <span>Basket</span>
+                    <Image src={BasketIcon} alt="basket" />
+                  </div>
+                }
+              ]} />
           </nav>
         </div>
         <nav className='px-3 py-5'>
           <Ul
             fontSize='text-md'
             fontWeight={FontWeight.semiBold}
-            className='text-custom-gray-700'
+            className='text-custom-gray-700 items-center text-center justify-center'
             links={[
               {
                 value: <div className='flex items-center space-x-2'>
@@ -65,7 +110,7 @@ const App = () => {
             <div className="relative z-10 bg-custom-gray-800 lg:mx-24 lg:my-[130px] w-fit p-10">
               <H1 label="Get up to 30% off" className='text-custom-gray-50' />
               <H1 label="New Arrivals" className='text-custom-orange' />
-              <Paragraph label={'Introducing our latest collection of products'} className='mt-3 text-custom-gray-100' />
+              <H6 label={'Introducing our latest collection of products'} className='mt-3 text-custom-gray-100' />
               <br />
               <br />
               <Button
@@ -130,7 +175,7 @@ const App = () => {
             <Image placeholder='blur' src={Brand6} alt={'brand img'} />
           </div>
         </Section>
-        <Section className={`mb-52 h-[515px] md:mt-24 relative`}>
+        <Section className={`mb-48 h-[515px] md:mt-24 relative`}>
           <Image
             src={SummerCollectionBg}
             className={'h-[515px] -z-10 absolute md:px-20 px-10'}
@@ -143,13 +188,106 @@ const App = () => {
             <Button
               label={'shop now'}
               className='border mb-[106px] border-custom-light-gray text-custom-red bg-custom-light-gray'
-              suffix={<Image placeholder='blur' src={ShopArrowIcon} alt={'arrow'} />}
+              suffix={<Image src={ShopArrowIcon} alt={'arrow'} />}
             />
             <Countdown endDate={'01/01/2023'} />
           </div>
         </Section>
-        <Section className='bg-custom-gray-50'>
-          <></>
+        <Section className='bg-custom-gray-50 py-14'>
+          <div className='grid grid-cols-5'>
+            <div>
+              <Paragraph label={'company info'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
+              <Paragraph label={'About Laura’s Closet'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Social Responsibility'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Affiliate'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Fashion Blogger'} className='mt-3 text-custom-gray-500' />
+            </div>
+            <div>
+              <Paragraph label={'HElp & Support'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
+              <Paragraph label={'Shipping Info'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Returns'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'How to Order'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'How to Track'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Size Chart'} className='mt-3 text-custom-gray-500' />
+            </div>
+            <div>
+              <Paragraph label={'customer care'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
+              <Paragraph label={'Contact Us'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Payment'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Bonus Point'} className='mt-3 text-custom-gray-500' />
+              <Paragraph label={'Notices'} className='mt-3 text-custom-gray-500' />
+            </div>
+            <div className='col-span-2 grid grid-cols-2'>
+              <div>
+                <Paragraph label={'socials'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
+                <div className='flex space-x-2 my-4'>
+                  <Image src={facebookIcon} alt="facebook-logo" />
+                  <Image src={twitterIcon} alt="twitter-logo" />
+                  <Image src={instagramIcon} alt="instagram-logo" />
+                  <Image src={tiktokIcon} alt="tiktok-logo" />
+                  <Image src={snapchatIcon} alt="snapchat-logo" />
+                </div>
+              </div>
+              <div className='col-start-3'>
+                <Paragraph label={'platforms'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
+                <div className='flex space-x-2 my-4'>
+                  <Image src={androidIcon} alt="android-logo" />
+                  <Image src={appleIcon} alt="apple-logo" />
+                </div>
+              </div>
+              <div className='col-span-3'>
+                <Paragraph label={'SIGN UP FOR Laura’s Closet  STYLE NEWS'} className='text-custom-gray-800' />
+                <div className='flex items-center justify-center space-x-2 mt-1'>
+                  <Input className='py-3 px-4 border grow' placeholder={'Your email'} type={'email'} />
+                  <Button className='py-4 border-none bg-custom-gray-800 text-custom-gray-50' label={'subscribe'} />
+                </div>
+                <div className='col-span-3 flex items-center mt-2 space-x-1'>
+                  <SubTitle className='text-custom-gray-500' label={'By clicking the SUBSCRIBE button, you are agreeing to our'} />
+                  <SubTitle className='text-custom-blue' label={'Privacy & Cookie Policy'} />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='grid grid-cols-5 mt-14'>
+            <div className='col-span-3'>
+              <Paragraph label={'©2010-2022 Laura’s Closet All Rights Reserved'} className='text-custom-gray-500' />
+              <Ul
+                className='text-md space-x-3 mt-5 underline underline-offset-4'
+                links={[
+                  { value: 'Privacy Center' },
+                  { value: 'Privacy & Cookie Policy' },
+                  { value: 'Manage Cookies' },
+                ]} />
+              <Ul
+                className='text-md space-x-3 mt-2 underline underline-offset-4'
+                links={[
+                  { value: 'Terms & Conditions' },
+                  { value: 'Copyright Notice' },
+                  { value: 'Imprint' },
+                ]} />
+            </div>
+            <div className='col-span-2'>
+              <Paragraph label={'we accept'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800 mb-6' />
+              <div className='flex items-center space-x-2'>
+                <Image src={masterCardLogo} alt="Mastercard logo" />
+                <Image src={paypalLogo} alt="Paypal logo" />
+                <Image src={ebayLogo} alt="ebay logo" />
+                <Image src={googlePayLogo} alt="gpay logo" />
+                <Image src={monoBanklogo} alt="monobank logo" />
+                <Image src={discoverLogo} alt="discover logo" />
+                <Image src={westernUnionLogo} alt="discover logo" />
+                <Image src={PayoneerLogo} alt="Payoneer logo" />
+              </div>
+              <div className='flex mt-2 items-center space-x-2'>
+                <Image src={applePay} alt="applepay logo" />
+                <Image src={americanExpress} alt="american epxress logo" />
+                <Image src={amazonLogo} alt="amazon logo" />
+                <Image src={aliPay} alt="alipay logo" />
+                <Image src={bitPay} alt="bitpay logo" />
+                <Image src={bitcoin} alt="bitcoin logo" />
+              </div>
+            </div>
+          </div>
         </Section>
       </main>
     </div>

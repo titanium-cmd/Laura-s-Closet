@@ -11,7 +11,7 @@ interface UlProps extends HTMLAttributes<HTMLHeadingElement> {
 
 const Ul: React.FC<UlProps> = ({ links, className, fontWeight, fontSize }) => {
   return (
-    <ul className={`flex items-center text-center justify-center space-x-10 ${fontWeight} ${fontSize} ${className}`}>
+    <ul className={`flex space-x-10 text-custom-gray-500 ${fontWeight} ${fontSize} ${className}`}>
       {links.length > 0 && links.map(link => <Li key={link.value} value={link.value} href={link.href} />)}
     </ul>
   )

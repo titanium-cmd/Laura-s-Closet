@@ -272,7 +272,7 @@ const App = () => {
             </div>
           </div>
           <div className='grid grid-cols-5 mt-14'>
-            <div className='col-span-3'>
+            <div className='md:col-span-3 col-span-5'>
               <Paragraph label={'©2010-2022 Laura’s Closet All Rights Reserved'} className='text-custom-gray-500' />
               <Ul
                 ulClassName='text-md space-x-3 mt-5'
@@ -293,7 +293,7 @@ const App = () => {
                   { value: 'Imprint' },
                 ]} />
             </div>
-            <div className='col-span-2'>
+            <div className='md:col-span-2 col-span-5 mb-2'>
               <Paragraph label={'we accept'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800 mb-6' />
               <div className='flex grow w-full items-center space-x-2'>
                 <Image src={masterCardLogo} alt="Mastercard logo" />

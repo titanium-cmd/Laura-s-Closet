@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import React, { HTMLAttributes } from 'react';
 import { H4 } from '../text';
 
+// Define the props for the Section component
 interface SectionProps extends HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
   className?: string;
@@ -9,37 +10,46 @@ interface SectionProps extends HTMLAttributes<HTMLHeadingElement> {
   hasSpacing?: boolean;
 }
 
+// Section component
 const Section: React.FC<SectionProps> = ({
   children,
   className,
   hasSpacing = true,
   title,
 }) => {
+  // Animation variants for the section
   const sectionVariants = {
-    initial: {
+    hidden: {
       opacity: 0,
       y: 50,
     },
-    animate: {
+    visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5,
-        ease: [0.4, 0, 0.2, 1],
-      },
     },
   };
 
+  // Transition for the animation
+  const sectionTransition = {
+    duration: 1,
+    ease: [0.4, 0, 0.2, 1],
+  };
+
+  // Render the component
   return (
     <motion.div
       variants={sectionVariants}
-      animate="animate"
+      initial="hidden" // Set initial animation state
+      animate="visible" // Set animation state to play
+      transition={sectionTransition} // Apply transition settings
       className={`${hasSpacing ? 'md:px-20 px-10' : ''} ${className} mt-24 md:mt-0`}
     >
       {title && (
         <motion.div
           variants={sectionVariants}
-          animate="animate"
+          initial="hidden" // Set initial animation state
+          animate="visible" // Set animation state to play
+          transition={sectionTransition} // Apply transition settings
           className="md:mt-32 mb-7 flex flex-col justify-center items-center"
         >
           <H4 label={title} className="uppercase text-custom-gray-700" />

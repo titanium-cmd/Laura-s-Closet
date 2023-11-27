@@ -13,7 +13,7 @@ interface UlProps extends HTMLAttributes<HTMLHeadingElement> {
 
 const Ul: React.FC<UlProps> = ({ links, ulClassName, liClassName, fontWeight, fontSize, middleMan }) => {
   return (
-    <ul className={`flex space-x-10 text-custom-gray-500 ${fontWeight} ${fontSize} ${ulClassName}`}>
+    <ul className={`flex text-custom-gray-500 ${fontWeight} ${fontSize} ${ulClassName}`}>
       {links.length > 0 && links.map((link, i) => {
         return (
           <React.Fragment key={link.value}>

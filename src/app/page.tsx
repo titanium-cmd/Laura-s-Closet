@@ -1,4 +1,6 @@
-import Image from 'next/image'
+"use client";
+import { motion, useScroll, useSpring } from "framer-motion";
+import Image from 'next/image';
 import {
   ArrivalLady,
   ArrowIcon,
@@ -42,18 +44,26 @@ import {
   tiktokIcon,
   twitterIcon,
   westernUnionLogo
-} from '../../public/assets'
-import Button from './components/button'
-import { HighlightCard, ProductCard } from './components/cards'
-import Countdown from './components/countdown'
-import Input from './components/input'
-import Section from './components/section'
-import { FontWeight, H1, H4, H6, Paragraph, SubTitle } from './components/text'
-import Ul from './components/ul'
+} from '../../public/assets';
+import Button from './components/button';
+import { HighlightCard, ProductCard } from './components/cards';
+import Countdown from './components/countdown';
+import Input from './components/input';
+import Section from './components/section';
+import { FontWeight, H1, H4, H6, Paragraph, SubTitle } from './components/text';
+import Ul from './components/ul';
 
 const App = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <div>
+    <>
+      <motion.div className="fixed top-0 left-0 right-0 h-2 rounded-full z-50 bg-custom-red transform origin-left" style={{ scaleX }} />
       <header>
         <div className='py-4 bg-custom-light-gray md:px-12 px-5 flex items-center justify-between'>
           <H4
@@ -62,6 +72,7 @@ const App = () => {
           <Input placeholder='Search for an Item...' prefix={<Image src={SearchIcon} alt="Search icon" />} />
           <nav>
             <Ul
+              ulClassName="space-x-10"
               links={[
                 { value: "Store" },
                 { value: 'Account' },
@@ -79,7 +90,7 @@ const App = () => {
           <Ul
             fontSize='text-md'
             fontWeight={FontWeight.semiBold}
-            ulClassName='text-custom-gray-700 inline-block items-center text-center justify-center'
+            ulClassName='text-custom-gray-700 space-x-10 inline-block items-center text-center justify-center'
             liClassName='inline-block'
             links={[
               {
@@ -198,7 +209,7 @@ const App = () => {
             <div>
               <Paragraph label={'company info'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
               <Ul
-                ulClassName='flex-col text-left space-x-0 space-y-3 mt-3 text-md'
+                ulClassName='flex-col text-left space-y-3 mt-3 text-md'
                 links={[
                   { value: 'About Laura’s Closet' },
                   { value: 'Social Responsibility' },
@@ -209,8 +220,7 @@ const App = () => {
             <div>
               <Paragraph label={'HElp & Support'} fontWeight={FontWeight.semiBold} className='uppercase text-custom-gray-800' />
               <Ul
-                ulClassName='flex-col border text-left space-x-0 space-y-3 mt-3 text-md'
-                liClassName='border'
+                ulClassName='flex-col space-y-3 mt-3 text-md'
                 links={[
                   { value: 'Shipping Info' },
                   { value: 'Returns' },
@@ -307,7 +317,7 @@ const App = () => {
           </div>
         </Section>
       </main>
-    </div>
+    </>
   )
 }
 

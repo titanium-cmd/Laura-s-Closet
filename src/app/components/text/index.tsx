@@ -21,7 +21,7 @@ const H1: React.FC<TextProps> = ({ label, fontWeight = FontWeight.semiBold, clas
 
 const H4: React.FC<TextProps> = ({ label, fontWeight = FontWeight.medium, className }) => {
   return (
-    <h4 className={`text-xl ${fontWeight} ${className}`}>{label}</h4>
+    <h4 className={`md:text-xl ${fontWeight} ${className}`}>{label}</h4>
   )
 }
 

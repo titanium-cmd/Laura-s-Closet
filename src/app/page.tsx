@@ -151,24 +151,28 @@ const App = () => {
         <Section title={'Popular this week'}>
           <div className='space-y-5 md:space-y-0 md:my-20 gap-8 grid md:grid-cols-4'>
             <ProductCard
+              index={1}
               imgSrc={Product1}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={120.23}
               discountedPrice={120.23}
-            />
+              />
             <ProductCard
+              index={2}
               imgSrc={Product2}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={90}
               discountedPrice={100}
-            />
+              />
             <ProductCard
+              index={3}
               imgSrc={Product3}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={140.24}
               discountedPrice={150.11}
-            />
+              />
             <ProductCard
+              index={4}
               imgSrc={Product4}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={105.23}

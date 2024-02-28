@@ -1,6 +1,7 @@
-import Image, { StaticImageData } from 'next/image'
-import React, { HTMLAttributes } from 'react'
-import { FontWeight, H1, H6, Paragraph, SubTitle } from '../text'
+import { motion } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import React, { HTMLAttributes } from 'react';
+import { FontWeight, H1, H6, Paragraph, SubTitle } from '../text';
 
 interface HighlightCardProps extends HTMLAttributes<HTMLHeadingElement> {
   imgSrc: StaticImageData,
@@ -10,6 +11,7 @@ interface HighlightCardProps extends HTMLAttributes<HTMLHeadingElement> {
 
 interface ProductCardProps extends HTMLAttributes<HTMLHeadingElement> {
   imgSrc: StaticImageData,
+  index: number,
   productDesc: string,
   originalPrice: number,
   discountedPrice: number,
@@ -30,9 +32,24 @@ const HighlightCard: React.FC<HighlightCardProps> = ({ imgSrc, className, title 
   )
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ imgSrc, className, productDesc, originalPrice, discountedPrice }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ index, imgSrc, className, productDesc, originalPrice, discountedPrice }) => {
   return (
-    <div className={`h-full ${className} relative`}>
+    <motion.div
+      variants={{
+        hidden: {
+          opacity: 0,
+          x: 50,
+          transition: { ease: [0.78, 0.14, 0.15, 0.86] }
+        },
+        show: {
+          opacity: 1,
+          x: 0,
+          transition: { ease: [0.78, 0.14, 0.15, 0.86] }
+        }
+      }}
+      whileInView={'visible'}
+      viewport={{ once: false, amount: 0.5 }}
+      className={`h-full ${className} relative hover:-translate-y-3 transition-all transform duration-[600ms] py-2 px-1 ease-in-out hover:shadow-[0_25px_20px_-20px_rgba(0,0,0,0.45)] cursor-pointer`}>
       <Image src={imgSrc} className={'h-[343px]'} alt="product-img" />
       <div className='border-rounded-10'>
         <Paragraph
@@ -48,9 +65,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ imgSrc, className, productDes
           <button className='text-md font-semibold p-1'>+ Add to Basket</button>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
-export { HighlightCard, ProductCard }
+export { HighlightCard, ProductCard };
 

@@ -47,9 +47,10 @@ const Section: React.FC<SectionProps> = ({
       {title && (
         <motion.div
           variants={sectionVariants}
-          initial="hidden" // Set initial animation state
-          animate="visible" // Set animation state to play
-          transition={sectionTransition} // Apply transition settings
+          whileInView={'visible'}
+          initial="hidden"
+          viewport={{ once: false, amount: 0.5 }}
+          transition={sectionTransition}
           className="md:mt-32 mb-7 flex flex-col justify-center items-center"
         >
           <H4 label={title} className="uppercase text-custom-gray-700" />

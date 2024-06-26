@@ -42,7 +42,8 @@ const Section: React.FC<SectionProps> = ({
       initial="hidden" // Set initial animation state
       animate="visible" // Set animation state to play
       transition={sectionTransition} // Apply transition settings
-      className={`${hasSpacing ? 'md:px-20 px-10' : ''} ${className} mt-24 md:mt-0`}
+      className={`${hasSpacing ? 'md:px-12 px-5' : ''} ${className} mt-24 md:mt-0`}
+    // className={`${hasSpacing ? 'md:px-20 px-10' : ''} ${className} mt-24 md:mt-0`}
     >
       {title && (
         <motion.div

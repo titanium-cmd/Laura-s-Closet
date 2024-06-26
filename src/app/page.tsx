@@ -1,10 +1,9 @@
 "use client";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { useScroll, useSpring } from "framer-motion";
 import Image from 'next/image';
 import {
   ArrivalLady,
   ArrowIcon,
-  BasketIcon,
   Brand1,
   Brand2,
   Brand3,
@@ -21,7 +20,6 @@ import {
   Product2,
   Product3,
   Product4,
-  SearchIcon,
   ShopArrowIcon,
   SummerCollectionBg,
   aliPay,
@@ -48,6 +46,7 @@ import {
 import Button from './components/button';
 import { HighlightCard, ProductCard } from './components/cards';
 import Countdown from './components/countdown';
+import Header from "./components/header";
 import Input from './components/input';
 import Section from './components/section';
 import { FontWeight, H1, H4, H6, Paragraph, SubTitle } from './components/text';
@@ -63,58 +62,7 @@ const App = () => {
 
   return (
     <>
-      <motion.div className="fixed top-0 left-0 right-0 h-2 rounded-full z-50 bg-custom-red transform origin-left" style={{ scaleX }} />
-      <header>
-        <div className='py-4 bg-custom-light-gray md:px-12 px-5 flex items-center justify-between'>
-          <H4
-            label="Laura's Closet"
-            className='text-custom-gray-700' />
-          <Input placeholder='Search for an Item...' prefix={<Image src={SearchIcon} alt="Search icon" />} />
-          <nav>
-            <Ul
-              ulClassName="space-x-10"
-              links={[
-                { value: "Store" },
-                { value: 'Account' },
-                { value: 'Wish List' },
-                {
-                  value: <div className='flex text-custom-gray-800 space-x-3 font-semibold'>
-                    <span>Basket</span>
-                    <Image src={BasketIcon} alt="basket" />
-                  </div>
-                }
-              ]} />
-          </nav>
-        </div>
-        <nav className='px-3 py-5'>
-          <Ul
-            fontSize='text-md'
-            fontWeight={FontWeight.semiBold}
-            ulClassName='text-custom-gray-700 space-x-10 inline-block items-center text-center justify-center'
-            liClassName='inline-block'
-            links={[
-              {
-                value: <div className='flex items-center space-x-2'>
-                  <span>New Arrivals</span>
-                  <span className='bg-custom-red text-custom-gray-50 px-2 py-0.5 rounded-sm'>#Fresh</span>
-                </div>
-              },
-              { value: "Store" },
-              { value: 'Dresses' },
-              { value: 'Tops' },
-              { value: 'Jackets' },
-              { value: 'Lingerie & Lounge Wear' },
-              { value: 'Beach Wear' },
-              { value: 'Blouse' },
-              { value: 'Denim' },
-              { value: 'Vintage' },
-              { value: 'Shoes' },
-              { value: 'Sandals' },
-              { value: 'Bags' },
-              { value: 'Jewelries' },
-            ]} />
-        </nav>
-      </header>
+      <Header />
       <main>
         <Section hasSpacing={false} className='grid md:grid-cols-3'>
           <section className="relative md:col-span-2 bg-[#111827] bg-opacity-95">
@@ -156,21 +104,21 @@ const App = () => {
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={120.23}
               discountedPrice={120.23}
-              />
+            />
             <ProductCard
               index={2}
               imgSrc={Product2}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={90}
               discountedPrice={100}
-              />
+            />
             <ProductCard
               index={3}
               imgSrc={Product3}
               productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
               originalPrice={140.24}
               discountedPrice={150.11}
-              />
+            />
             <ProductCard
               index={4}
               imgSrc={Product4}

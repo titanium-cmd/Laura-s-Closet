@@ -1,8 +1,9 @@
 "use client";
 
 import Image from 'next/image';
-import React from 'react';
-import { dropdownArrow } from '../../../public/assets';
+import React, { useState } from 'react';
+import { dropdownArrow, Product1 } from '../../../public/assets';
+import { OrderProductCard } from '../components/cards';
 import Footer from '../components/footer';
 import Header from "../components/header";
 import Input from '../components/input';
@@ -13,9 +14,11 @@ import { FontWeight, Paragraph } from '../components/text';
 
 
 const StorePage: React.FC = () => {
+  const [priceRange, setPriceRange] = useState({ min: 60, max: 300 });
   const handleSliderChange = (lowerValue: number, upperValue: number) => {
-    console.log('Slider values:', lowerValue, upperValue);
+    setPriceRange({ min: Math.round(lowerValue), max: Math.round(upperValue) })
   };
+
   return (
     <>
       <Header />
@@ -37,14 +40,14 @@ const StorePage: React.FC = () => {
             </div>
           </section>
         </Section>
-        <Section className='grid grid-cols-4 gap-2'>
+        <Section className='grid grid-cols-4 gap-10'>
           <aside className='bg-custom-gray-50 py-10 px-6'>
             <Paragraph className='text-custom-gray-800' fontWeight={FontWeight.semiBold} label={'prices'.toUpperCase()} />
             <div className='flex justify-between my-6'>
               <Paragraph className='text-custom-gray-600' label={'Range'} />
-              <Paragraph className='text-custom-gray-800' fontWeight={FontWeight.semiBold} label={'$120 - $300'} />
+              <Paragraph className='text-custom-gray-800' fontWeight={FontWeight.semiBold} label={`$${priceRange.min} - $${priceRange.max}`} />
             </div>
-            <MultiRangeSlider maxValue={100} initialLowerValue={10} initialUpperValue={90} minValue={0} onChange={handleSliderChange} />
+            <MultiRangeSlider maxValue={1000} initialLowerValue={priceRange.min} initialUpperValue={priceRange.max} minValue={priceRange.min} onChange={handleSliderChange} />
             <Paragraph className='text-custom-gray-800 mt-10' fontWeight={FontWeight.semiBold} label={'filters'.toUpperCase()} />
             <div className='my-6 space-y-2'>
               <Input label={'Women'} type='checkbox' />
@@ -81,8 +84,52 @@ const StorePage: React.FC = () => {
               <Input label={'Sexy Plus Size'} type='checkbox' />
             </div>
           </aside>
-          <section className='col-span-3'>
-
+          <section className='col-span-3 grid gap-10 grid-cols-3'>
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
+            <OrderProductCard index={1}
+              imgSrc={Product1}
+              productDesc={'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse'}
+              originalPrice={120.23}
+              discountedPrice={120.23} />
           </section>
         </Section>
         <Footer />

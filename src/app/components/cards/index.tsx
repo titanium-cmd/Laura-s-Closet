@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import React, { HTMLAttributes } from 'react';
+import { heart } from '../../../../public/assets';
 import { FontWeight, H1, H6, Paragraph, SubTitle } from '../text';
 
 interface HighlightCardProps extends HTMLAttributes<HTMLHeadingElement> {
@@ -69,5 +70,45 @@ const ProductCard: React.FC<ProductCardProps> = ({ index, imgSrc, className, pro
   )
 }
 
-export { HighlightCard, ProductCard };
+const OrderProductCard: React.FC<ProductCardProps> = ({ index, imgSrc, className, productDesc, originalPrice, discountedPrice }) => {
+  return (
+    <motion.div
+      variants={{
+        hidden: {
+          opacity: 0,
+          x: 50,
+          transition: { ease: [0.78, 0.14, 0.15, 0.86] }
+        },
+        show: {
+          opacity: 1,
+          x: 0,
+          transition: { ease: [0.78, 0.14, 0.15, 0.86] }
+        }
+      }}
+      whileInView={'visible'}
+      viewport={{ once: false, amount: 0.5 }}
+      className={`h-full ${className} border border-custom-gray-200 relative hover:-translate-y-3 transition-all transform duration-[600ms] py-2 px-1 ease-in-out hover:shadow-[0_25px_20px_-20px_rgba(0,0,0,0.45)] cursor-pointer`}>
+      <Image src={imgSrc} className={'h-[343px]'} alt="product-img" />
+      <div className='p-3 absolute top-8 bg-[black] bg-opacity-30 right-8'>
+        <Image src={heart} alt="heart-fav-img" />
+      </div>
+      <div className='border-rounded-10 p-3'>
+        <Paragraph
+          label={productDesc}
+          fontWeight={FontWeight.regular}
+          className='tracking-wide text-md font-extralight mt-1 text-custom-gray-700'
+        />
+        <div className='flex justify-between items-end'>
+          <div className='items-center'>
+            <SubTitle fontWeight={FontWeight.semiBold} className='text-[1rem] font-bold text-custom-gray-700' label={`$${originalPrice}`} />
+            <SubTitle label={`$${discountedPrice}`} className='text-[1rem] text-custom-gray-400 line-through' />
+          </div>
+          <Paragraph className='text-custom-gray-600 text-[1.2rem] mb-2' fontWeight={FontWeight.regular} label={'24 Orders'} />
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
+export { HighlightCard, OrderProductCard, ProductCard };
 
